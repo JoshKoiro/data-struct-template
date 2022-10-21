@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 8000;
 
-app.use(express.static('./'));
+app.use(express.static('src'));
 
 // sendFile will go here
 app.get('/', function(req, res) {
