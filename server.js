@@ -1,9 +1,15 @@
 const express = require('express');
 const path = require('path');
+const livereload = require('livereload');
+const connectLiveReload = require('connect-livereload');
+
+const liveReloadServer = livereload.createServer();
+liveReloadServer.watch('','src');
 
 const app = express();
 const port = process.env.PORT || 8000;
 
+app.use(connectLiveReload());
 app.use(express.static('src'));
 
 // sendFile will go here
