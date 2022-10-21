@@ -27,7 +27,7 @@ let Pub = (content, properties) => {
         properties.id = properties.id || 'id-' + content
         properties.class = properties.class || 'text'
         properties.element = properties.element ||  'p'
-        
+
     let html = document.createElement(properties.element)
     Object.keys(properties).map((prop) => {
         html.setAttribute(prop,properties[prop])
@@ -39,8 +39,14 @@ let Pub = (content, properties) => {
 
 }
 
-let Update = (element) => {
-
+let Update = (elementID,newContent,properties) => {
+    let element = document.getElementById(elementID).innerHTML = newContent
+    if(properties){
+        //update the properties
+        Object.keys(properties).map((prop) => {
+            element.setAttribute(prop,properties[prop])
+        })
+    }
 }
 
 let Del = (element) => {
