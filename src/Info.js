@@ -20,7 +20,7 @@ let Info = (object) => {
 }
 
 //This is a function that can publish data to the html page
-let Pub = (content, properties) => {
+let Ins = (content, properties) => {
     if(!properties){
         properties = {}
     }
@@ -49,6 +49,6 @@ let Update = (elementID,newContent,properties) => {
     }
 }
 
-let Del = (element) => {
-
+let Del = (elementID) => {
+    document.getElementById(elementID).remove()
 }

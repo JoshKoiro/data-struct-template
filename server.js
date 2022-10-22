@@ -5,10 +5,10 @@ const connectLiveReload = require('connect-livereload');
 
 const liveReloadServer = livereload.createServer();
 //Only watches the .html file.
-liveReloadServer.watch('view');
+// liveReloadServer.watch('view');
 
 //Watches the js files as well
-// liveReloadServer.watch('');
+liveReloadServer.watch('');
 
 const app = express();
 const port = process.env.PORT || 8000;
