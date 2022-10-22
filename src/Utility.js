@@ -1,9 +1,10 @@
 //These are utility functions that can be used in the browser console or in the object class code.
 
 
-// This is a utility function to be able to call on any object
-//it will list all of the properties and methods on a given object
-//(excluding private methods)
+/**
+ * This returns a formated table in the console showing properties and public methods of an object
+ * @param {Object} object 
+ */
 let Info = (object) => {
     let listObj = {}
     Object.getOwnPropertyNames(object)
@@ -20,6 +21,11 @@ let Info = (object) => {
 }
 
 //This is a function that can publish data to the html page
+/**
+ * Inserts a new HTML tag onto the DOM
+ * @param {String} content content to insert into HTML
+ * @param {Object} properties object containing attributes of html tag to be applied
+ */
 let Ins = (content, properties) => {
     if(!properties){
         properties = {}
@@ -39,6 +45,12 @@ let Ins = (content, properties) => {
 
 }
 
+/**
+ * Update an existing HTML tag on the DOM
+ * @param {String} elementID The id attribute of the item to update
+ * @param {String} newContent The new content to write over the existing innerHTML content
+ * @param {Object} properties object containing attributes of html tag to be applied
+ */
 let Update = (elementID,newContent,properties) => {
     let element = document.getElementById(elementID).innerHTML = newContent
     if(properties){
@@ -48,7 +60,10 @@ let Update = (elementID,newContent,properties) => {
         })
     }
 }
-
+/**
+ * Delete an existing HTML tag on the DOM
+ * @param {String} elementID the id attribute of the item to delete
+ */
 let Del = (elementID) => {
     document.getElementById(elementID).remove()
 }
