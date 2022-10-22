@@ -12,15 +12,14 @@ let Info = (object) => {
         .map((e,i) => {
              listObj[e] = {type: 'property'}
         })
-    Object.getOwnPropertyNames(object)
-    .filter((item) => typeof object[item] === 'function')
+    Object.getOwnPropertyNames(Object.getPrototypeOf(object))
+    .filter((item) => item !== 'constructor')
     .map((e,i) => {
             listObj[e] = {type: 'method'}
         })
     console.table(listObj)
 }
 
-//This is a function that can publish data to the html page
 /**
  * Inserts a new HTML tag onto the DOM
  * @param {String} content content to insert into HTML
@@ -60,6 +59,7 @@ let Update = (elementID,newContent,properties) => {
         })
     }
 }
+
 /**
  * Delete an existing HTML tag on the DOM
  * @param {String} elementID the id attribute of the item to delete

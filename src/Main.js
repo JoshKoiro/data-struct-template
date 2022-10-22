@@ -8,18 +8,10 @@ class Main {
     }
 
     /**
-     * Example of a public method
+     * Example of a method
      * @returns {Main} Main Object
      */
-    publicMethod = () => {
-        return this
-    }
-
-    /**
-     * Example of a private method
-     * @returns {Main} Main Object
-     */
-    privateMethod(){
+    exampleMethod(){
         return this
     }
 }
